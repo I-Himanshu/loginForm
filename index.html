@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style type="text/css" media="all">
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+   .container
+    {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      width: 100vw;
+      font-family: 'Roboto Mono', monospace;
+      background-color: #34495e;
+      background: url(https://static.statusqueen.in/mobilewallpaper/thumbnail/mobile_wallpaper__1-471.jpg) no-repeat;
+      background-size: cover;
+    }
+
+    .box
+    {
+      width: 300px;
+      padding: 40px 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #191919;
+      text-align: center;
+      color: white;
+    }
+    .box h2
+    {
+      color: white;
+      text-transform: none;
+      font-weight: 200;
+    }
+
+    .box input[type="email"],
+    .box input[type="password"] {
+      border: 0;
+      background: none;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      border: 2px solid #3498db;
+      padding: 14px 10px;
+      width: 280px;
+      outline: none;
+      border-radius: 24px;
+      color: white;
+      transition: 0.25s;
+      transform: scaleX(0.7);
+    }
+    .box input[type="email"]:focus,
+    .box input[type="password"]:focus {
+      width: 280px;
+      transform: scaleX(1);
+      border-color: #2ecc71;
+    }
+    .box input[type="submit"] {
+      border: 0;
+      background: none;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      border: 2px solid #2ecc71;
+      padding: 14px 50px;
+      width: 136px;
+      outline: none;
+      border-radius: 24px;
+      color: white;
+      transition: 0.25s;
+      cursor: pointer;
+    }
+    .box input[type="submit"]:hover {
+      background-color: rgb(5, 5, 5);
+    }
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <form id="inputForm" class="box" action="#" method="post">
+    <h2>LOGIN</h2>
+    <input name="Email" type="email" placeholder="Enter Your Email">
+    <input name="Password" type="password" placeholder="Your Password">
+    <input type="submit" value="Login">
+  </form>
+</div>
+  <script type="text/javascript" charset="utf-8">
+    let container = document.querySelector(".container");
+    let inputForm = document.getElementById("inputForm");
+    inputForm.addEventListener("submit",(e)=>{
+      e.preventDefault();
+      let email = inputForm[0].value;
+      let pass = inputForm[1].value;
+      let box = document.createElement("div");
+      box.classList.add("box");
+      let h2 = document.createElement("h2");
+      h2.innerText = "Congratulations 💐";
+      let p = document.createElement("p");
+      p.innerText = `\n\nYour Email: ${email}\nYour Password: ${pass}`;
+      
+      box.appendChild(h2);
+      box.appendChild(p);
+      container.innerHTML = "";
+      container.appendChild(box)
+    })
+  </script>
+</body>
+</html>
